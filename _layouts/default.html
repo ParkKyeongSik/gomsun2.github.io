@@ -3,12 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>
-          {{ page.title }}
-          {% if page.category == 'blog' and page.url != '/blog/index.html' %}
-            - gomsun2 blog :)
-          {% endif %}
-        </title>
+        <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
 
         <!-- syntax highlighting CSS -->
@@ -16,7 +11,7 @@
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
-        {{ page.extra_head }}
+
     </head>
     <body>
 
