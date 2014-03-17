@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "node.js #1"
+date:   2014-03-17 23:53:59
+categories: node.js
+---
+
 # Node 공부 정리
 
 ### 정리 할것 1차.
