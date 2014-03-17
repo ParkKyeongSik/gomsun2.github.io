@@ -1,7 +1,3 @@
 name: gomsun2 blog
 markdown: redcarpet
 pygments: true
-
-author:
-	twitter: gomsun2twt
-	github: gomsun2
