@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "mvw,delphi,구조적 작업"
+date:   2014-03-17 23:53:59
+categories: delphi
+---
+
+# model-view-whatever
+
+
+## model-view-viewmodel방식을 되돌아 보며
+
+생각보다 까다롭다. 구조의 이해 부족은 작성중인 core module의 변화를 불러오고.... 매번 제품의 업그래이드마다 변화의 폭을 늘려가고 있다.
+
+꽤나 심플한 구성방식에서 혹한것이 service의 도입. model과 service는 이렇게 구분지어 사용하고 있다.
+
+### service
+
+정리해보면...
+
+- model은 스키마정보를 가지고 있다.
+- Service는 정의된 model(스키마)의 생성키겨 제공시켜주는 provider역할
+- Application과 같은 생명 주기를 지닌 하나뿐인 객체
+- 정의된 하나뿐인 객체는 n개의 view-model이나 다른 service모듈에서 재활용한다.
+- n개의 스키마를 조합하여 정의된 비즈니스 루틴을 추상화
+
+service모듈이 정의된 배경.
+
+- 동일 스키마를 표현해야 하는 UI가 곳곳에 생김이 따라 상속(Inherited)으로 해결하려 하였지만, 구조적 한계가 따라온다.
+  - 예를 들어) 측정된 값의 집합(컨테이너, 리스트 등)이 있고, 사용자, 관리자, 보고자 각각의 view에 표시 해줘야 할 경우
+  - 동일한 집합이 각각의 view-model에 정의되고, 반복과 자원낭비가 쫒아 온다.
+- 힌트를 얻은것은 anguarjs에 있는 service 모델.
+- 이 service는 측정 값의 집합을 적당히 가곡하여 보유하고,
+- 필요한 view-model은 service 객체를 참고하여 값을 가지고 있으면 된다.
+
+이번 작업진행간, delphi의 언어적 기능이 확장되었으면 좋겠다는 생각을 많이 한다. ㅠㅠ
+
+예를 들어 service를 Interface로 선언하고 viewmodel에서 사용하려면
+```delphi
+Tvm = class(TObject, IGlucose)
+private
+  procedure SetValue(const AValue: Integer);
+  function GetValue: Integer;
+public
+  property IGlucoseProperty: Integer read GetValue write SetValue;
+  // 또는
+  property Glucose: TIGlucose read FGlucose; implement IGlucose;
+```
+
+- Interface를 품는 view-model에서 장점을 찾기 힘들다.
+- 일일이 Inteface를 구현해주거나,
+- Property로 빠진 Interface를 연결 후 `vm.Glucose.IGlucoseProperty`와 같은 접근을 하여야 한다.
+	- 가시성(Visibility)의 장점을 잃어 버린다.
+	- porperty의 장점이 사라짐. Getter와 Setter를 구현한들, 외부로 들어나버리니 ㅠ_ㅠ
+- 구현을 분리하는 컨셉이 너무나 멋진데, 2%부족한...
+
+만일 Interface를 멤버로 보유하더라도
+```delphi
+Tvm = class
+private
+  FGlucose: IGlucose;
+  function GetValue: Integer;
+public
+  property GlucoseValue: Integer read GetValue write SetValue;
+end;
+
+implement
+
+function Tvm.GetValue: Integer;
+begin
+  Result := FGlucose.GetValue;
+end;
+```
+와 같이 일일이 열거해주는 소모적인 작업이 요구된다.
+
+```delphi
+Tvm = class(TObject, IGlucose)
+private
+public
+  property GlucoseValue: Integer read IGlucose.GetValue write IGlucose.SetValue;
+  property Glucose: TIGlucose read FGlucose; implement IGlucose;
+end;
+```
+와 같은 형태로 발전되면 좋을것 같다.
