@@ -5,7 +5,7 @@ date:   2014-04-08 10:11:00
 categories: delphi
 ---
 
-# Delphi로 장치정보를 조회하기
+# Delphi로 장치정보를 조회하기 / Search Device Infos Using Delphi
 
 **[by gomsun2](http://gomsun2.github.io/)**
 
