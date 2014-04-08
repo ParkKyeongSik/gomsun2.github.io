@@ -7,7 +7,7 @@ categories: delphi
 
 # Delphi로 장치정보를 조회하기
 
-**[by gomsun2](http://gomsun2.github.io/delphi/2014/04/08/Search-Device-Infos-Using-Delphi.html)**
+**[by gomsun2](http://gomsun2.github.io/)**
 
 ## 장치 정보를 조회하기
 
