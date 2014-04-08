@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "delphi로 시스템에 연결된 장치 정보 확인하기"
+date:   2014-04-08 10:11:00
+categories: delphi
+---
 # Delphi로 장치정보를 조회하기
 
 ## 장치 정보를 조회하기
