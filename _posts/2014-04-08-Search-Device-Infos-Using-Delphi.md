@@ -4,6 +4,7 @@ title:  "delphi로 시스템에 연결된 장치 정보 확인하기"
 date:   2014-04-08 10:11:00
 categories: delphi
 ---
+
 # Delphi로 장치정보를 조회하기
 
 ## 장치 정보를 조회하기
@@ -108,10 +109,7 @@ MSDN: http://msdn.microsoft.com/en-us/library/windows/hardware/ff551010(v=vs.85)
 
 Comport와 USB의 연결정보는 아래의 예에서 찾을 수 있습니다.
 
-- Source: https://github.com/gomsun2/gs2lib/tree/master/source/device.win
-- Sample: https://github.com/gomsun2/gs2lib/tree/master/moduletest/mDvcObserver.WM_DEVICECHANGE
-
-
-
+- [Source](https://github.com/gomsun2/gs2lib/tree/master/source/device.win)
+- [Sample](https://github.com/gomsun2/gs2lib/tree/master/moduletest/mDvcObserver.WM_DEVICECHANGE)
 
 
