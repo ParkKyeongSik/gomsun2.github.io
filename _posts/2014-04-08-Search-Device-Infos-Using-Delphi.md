@@ -7,12 +7,14 @@ categories: delphi
 
 # Delphi로 장치정보를 조회하기
 
+**[by gomsun2](http://gomsun2.github.io/delphi/2014/04/08/Search-Device-Infos-Using-Delphi.html)**
+
 ## 장치 정보를 조회하기
 
 시스템의 장치 정보를 조회하는 방식은
 
 - WQL질의
-- Registory 죄회
+- Registory 조회
 - Windows API 활용
 
 같은 방식이 있습니다.
@@ -111,5 +113,8 @@ Comport와 USB의 연결정보는 아래의 예에서 찾을 수 있습니다.
 
 - [Source](https://github.com/gomsun2/gs2lib/tree/master/source/device.win)
 - [Sample](https://github.com/gomsun2/gs2lib/tree/master/moduletest/mDvcObserver.WM_DEVICECHANGE)
+
+
+
 
 
