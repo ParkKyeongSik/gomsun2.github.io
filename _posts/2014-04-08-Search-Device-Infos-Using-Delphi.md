@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "delphi로 시스템에 연결된 장치 정보 확인하기"
+title:  "Search Device Infos Using Delphi / delphi로 시스템에 연결된 장치 정보 확인하기"
 date:   2014-04-08 10:11:00
 categories: delphi
 ---
@@ -19,7 +19,7 @@ categories: delphi
 
 같은 방식이 있습니다.
 
-## WQL 질의
+## WQL 질의 / Using WQL
 
 WQL은 API의 접근대신에 시스템 정보를 추상화 시켜 놓은 아이입니다.
 
@@ -54,6 +54,7 @@ Delphi, PurePascal, C#, MS C++ 코드가 이쁘게 줄맞춰 생성됩니다.
 해당 레지스트리를 조회하여 원하는 정보를 취합할 수 있습니다.
 
 ```delphi
+// Find Comport Infos using registy
 unit mComportList;
 
 interface
@@ -102,7 +103,7 @@ end.
 ```
 
 
-## Windows API (SetupDixxx) 사용
+## Windows API (SetupDixxx) 사용 / Using Windows API
 
 MSDN: http://msdn.microsoft.com/en-us/library/windows/hardware/ff551010(v=vs.85).aspx
 
@@ -110,6 +111,7 @@ MSDN: http://msdn.microsoft.com/en-us/library/windows/hardware/ff551010(v=vs.85)
 - 일일이 Input, Output 파라미터, 각각의 구조체를 알아야지만 작성가능합니다. 손품을 팔아야 결과를 얻을 수 있습니다.
 
 Comport와 USB의 연결정보는 아래의 예에서 찾을 수 있습니다.
+Below links provides simple code lib and sample.
 
 - [Source](https://github.com/gomsun2/gs2lib/tree/master/source/device.win)
 - [Sample](https://github.com/gomsun2/gs2lib/tree/master/moduletest/mDvcObserver.WM_DEVICECHANGE)
