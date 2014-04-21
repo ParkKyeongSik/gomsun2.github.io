@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "자바스크립트란 무었인가"
+date:   2014-04-21 18:11:00
+categories: javascript
+---
+
 # 자바스크립트란 무었인가 ?
 
 **by gomsun2**
