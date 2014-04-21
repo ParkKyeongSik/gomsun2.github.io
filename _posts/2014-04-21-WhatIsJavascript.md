@@ -61,6 +61,7 @@ Javascript는 서버에서 수행되었던 유효성검사를 클라이언트에
  </body>
 
 ```
+
 ![JavacriptStack]({{ site.url }}/assets/2014-04-21-DOMTree.png)
 - 개발자는 DOM API를 통해 문서구조, CONTENTS를 추가, 수정, 삭제, 생성 할 수 있다.
 
