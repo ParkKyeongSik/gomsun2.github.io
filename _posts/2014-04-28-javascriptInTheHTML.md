@@ -66,7 +66,8 @@ HTML 페이지에 `<script>`요소를 통해 javascript를 삽입할 수 있습�
 //<!CDATA[
 
 //]]>
-//--></script>
+//-->
+</script>
 ```
 
 ## 문서모드
