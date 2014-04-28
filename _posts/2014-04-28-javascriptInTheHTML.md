@@ -9,7 +9,7 @@ categories: javascript
 
 by gomsun2
 
-## `<Script>`란
+## `<script>`요소 란
 
 HTML 페이지에 `<script>`요소를 통해 javascript를 삽입할 수 있습니다.
 
@@ -61,7 +61,7 @@ HTML 페이지에 `<script>`요소를 통해 javascript를 삽입할 수 있습�
   - `src`속성으로 js를 다룬다.
   - HTML과 javascript의 주석을 조합하여 browser를 속인다.
 
-```js
+```
 <script type="text\javascript"><!--
 //<!CDATA[
 
