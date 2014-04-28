@@ -1,10 +1,9 @@
 ---
+published: false
+title:  "2장 HTML속의 javascript
 layout: post
-title:  "2장 HTML속의 javascript"
-date:   2014-04-28 18:20:00
-categories: javascript
+categories: [javascript]
 ---
-
 # 2장 HTML속의 javascript
 
 by gomsun2
